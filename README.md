@@ -2,7 +2,8 @@
 
 ### About
 A software synthesizer for the study of music theory and chords written in Python and the QT GUI library. It is a versatile tool that can be used to create and visualize sounds with varying frequencies and timbres. It can also be used a tuning fork for tuning instruments.
-![image](./rsrc/screenshot.png =700x)
+
+![orQanon](https://raw.githubusercontent.com/xaratustrah/orQanon/master/rsrc/screenshot.png)
 
 ### Description
 
