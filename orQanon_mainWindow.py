@@ -134,7 +134,6 @@ class mainWindow(QMainWindow, Ui_mainWindow):
 
         tonic_number = (12*self.spinBox.value() + self.tonic_combo)
         tonic_frequency = 2**(( tonic_number -57)/12) * self.doubleSpinBox_2.value()
-        print(tonic_number, tonic_frequency)
         self.statusbar.showMessage('Fundamental frequency: {0:.2f} Hz. Press Enter to synthesize next sound.'.format(tonic_frequency))
 
         if self.radioButton_2.isChecked():
