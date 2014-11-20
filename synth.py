@@ -26,6 +26,7 @@ class Synth:
         self.rate = rate
         self.port = pyaudio.PyAudio()
         self.stream = self.port.open(format=pyaudio.paFloat32, channels=2, rate=rate, output=True, frames_per_buffer=chunk)
+        self.adsr = 0.2
 
 
     def play(self, x):
@@ -38,10 +39,9 @@ class Synth:
         self.stream.stop_stream()
 
         
-    def make_chord(self, frequencies, drawbars, duration):
+    def make_chord(self, frequencies, drawbars, duration, make_adsr = True):
 
         fs = self.rate
-
         t = np.arange(0, duration, 1/fs)
         x = np.zeros(len(t))
 
@@ -55,10 +55,17 @@ class Synth:
             x +=  int(drawbars[6])/8 * np.sin(2 * np.pi * frequencies[i]/ 8 / 5 * 8 * t) # 8/5 '
             x +=  int(drawbars[7])/8 * np.sin(2 * np.pi * frequencies[i]/ 4 / 3 * 8 * t) # 4/3 '
             x +=  int(drawbars[8])/8 * np.sin(2 * np.pi * frequencies[i]/ 1 * 8 * t) # 1 '
+        if make_adsr:
+            x *= 1-np.e**(-(t)*5/self.adsr/duration)
 
         return t, x
             
+    def make_adsr(fs, l = 1, rt = 0.2):
+        """Make an ADSR curve."""
         
+        t = np.arange(0, l, 1/fs)
+        return t, x
+
     def make_analytical(self, x):
         """Make an analitical signal from the real signal"""
 

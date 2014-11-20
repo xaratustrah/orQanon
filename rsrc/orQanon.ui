@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1141</width>
+    <width>1178</width>
     <height>637</height>
    </rect>
   </property>
@@ -751,32 +751,6 @@ background: white;
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="title">
-             <string>12 Tone Interval Ratios</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
-             <item>
-              <widget class="QRadioButton" name="radioButton_1">
-               <property name="text">
-                <string>Pythagorean</string>
-               </property>
-               <property name="checked">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QRadioButton" name="radioButton_2">
-               <property name="text">
-                <string>Tempered</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
            <widget class="QGroupBox" name="groupBox_6">
             <property name="title">
              <string>Tonic (Piano Key)</string>
@@ -825,10 +799,17 @@ background: white;
           <item>
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
-             <string>Duration [s]</string>
+             <string>Tone</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="0" column="0">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Duration [s]</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
               <widget class="QDoubleSpinBox" name="doubleSpinBox_1">
                <property name="minimum">
                 <double>0.100000000000000</double>
@@ -839,6 +820,45 @@ background: white;
                <property name="singleStep">
                 <double>0.100000000000000</double>
                </property>
+               <property name="value">
+                <double>0.700000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string>ADSR</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>12 Tone Interval Ratios</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QRadioButton" name="radioButton_1">
+               <property name="text">
+                <string>Pythagorean</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_2">
+               <property name="text">
+                <string>Tempered</string>
+               </property>
               </widget>
              </item>
             </layout>
@@ -847,13 +867,20 @@ background: white;
           <item>
            <widget class="QGroupBox" name="groupBox_7">
             <property name="title">
-             <string>GUI</string>
+             <string/>
             </property>
             <layout class="QGridLayout" name="gridLayout_6">
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QPushButton" name="pushButton_reset">
                <property name="text">
-                <string>Reset</string>
+                <string>Reset GUI</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="pushButton_synth">
+               <property name="text">
+                <string>Synth</string>
                </property>
               </widget>
              </item>
@@ -967,7 +994,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_8">
          <property name="text">
-          <string>A4</string>
+          <string>P5</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -977,7 +1004,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_9">
          <property name="text">
-          <string>P5</string>
+          <string>m6</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -987,7 +1014,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_10">
          <property name="text">
-          <string>m6</string>
+          <string>M6</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -997,7 +1024,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_11">
          <property name="text">
-          <string>M6</string>
+          <string>m7</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1007,7 +1034,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_12">
          <property name="text">
-          <string>m7</string>
+          <string>M7</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1017,7 +1044,7 @@ background: white;
        <item>
         <widget class="QPushButton" name="pushButton_13">
          <property name="text">
-          <string>M7</string>
+          <string>P8</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1034,7 +1061,7 @@ background: white;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1141</width>
+     <width>1178</width>
      <height>22</height>
     </rect>
    </property>

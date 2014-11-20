@@ -80,6 +80,7 @@ class mainWindow(QMainWindow, Ui_mainWindow):
         # signals and slots
 
         self.pushButton_reset.pressed.connect(self.do_reset)
+        self.pushButton_synth.pressed.connect(self.start_beep)
         self.comboBox.activated.connect(self.onActivated)
         #self.comboBox.activated[str].connect(self.onActivatedstr)
 
@@ -106,6 +107,7 @@ class mainWindow(QMainWindow, Ui_mainWindow):
         self.tonic_combo = 0 # C key
         self.radioButton_1.setChecked(True)
         self.radioButton_2.setChecked(False)
+        self.checkBox.setChecked(True)
         
     def keyPressEvent(self, event):
         
@@ -145,7 +147,7 @@ class mainWindow(QMainWindow, Ui_mainWindow):
             if not self.pushButtons[i].isChecked():
                 frequencies[i] = 0
         
-        t, x = self.synth.make_chord(frequencies, drawbars, duration)
+        t, x = self.synth.make_chord(frequencies, drawbars, duration, self.checkBox.isChecked())
 
         self.synth.play(x)
         xbar, inst_ph = self.synth.make_analytical(x)
