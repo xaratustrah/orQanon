@@ -1,7 +1,7 @@
 # orQanon
 
 ### About
-A software synthesizer for the study of music theory and chords written in Python and the QT GUI library. It is a versatile tool that can be used to create and visualize sounds with varying frequencies and timbres. It can also be used a tuning fork for tuning instruments.
+A software synthesizer for the study of music theory, intervals, chords and tuning systems written in Python 3.4 and the QT5 GUI library. It is a versatile tool that can be used to create and visualize sounds with varying frequencies and timbres. It can be used to train musical voice and hearing. It can also be used a tuning fork for tuning instruments having any frequency. The chord panel allows construction of regular or inverted chords of all kinds.
 
 ![orQanon](https://raw.githubusercontent.com/xaratustrah/orQanon/master/rsrc/screenshot.png)
 
@@ -15,7 +15,7 @@ Drawbars are shown as in historical Hammond B3 analog synthesizer, which in turn
 
 #### Hilbert Scope
 
-This pane shows the hilber transform of the signal for the purpose of visualization.
+This pane shows the Hilbert transform of the signal for the purpose of visualization. Simple ratios show interesting shapes. The effect of harmonics can be visualized on the screen.
 
 #### Tonic
 
