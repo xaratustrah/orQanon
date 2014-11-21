@@ -19,20 +19,24 @@ This pane shows the Hilbert transform of the signal for the purpose of visualiza
 
 #### Tonic
 
-The program assumes a tone range of a hypothetical piano with 108 keys, from C0 to B8. This means e.g. that the key A4, usually taken as frequency standard (tuning fork) in the musicology, is the 57th key. In order to avoid confusion, it should be mentioned that the successtion of the piano keys are actually according to an **equal tempered** piano keyboard. This does not limit the versatility of the software since the user can achieve any frequency by changing the tuning fork.
+The program assumes a tone range of a hypothetical piano with 108 keys, from C0 to B8. This means e.g. that the key A4, usually taken as frequency standard (tuning fork) in the musicology, is the 57th key. In order to avoid confusion, it should be mentioned that the succession of the piano keys are actually according to an **equal tempered** piano keyboard. This does not limit the versatility of the software since the user can achieve any frequency by changing the tuning fork.
 
 
 #### Tone
 
-Here you can set the duration of the tone and ADSR (Attack, Decay, Sustain, Release) curve. Currently each transient is set to 1/5th of the duration.
+Here you can set the duration of the tone and ADSR (Attack, Decay, Sustain, Release) curve. Currently each exponential transient is set to 1/5th of the duration.
+
+#### Stradella
+
+This is four rows of Stradella bass system (root/octave, major, minor and seventh from top to bottom) together with three columns. The concave button is shown in dark green to mark the tonic.
 
 #### 12 Tone interval ratios
 
 Here one can choose the ratios governing the 12 tone chord scale. Currently Pythagorean and 12 tone equal temperament can be chosen. Of course this does not affect the single tone generation (drawbars).
 
-#### GUI reset
+#### Misc
 
-This button is for convenience, in order to quickly reset the GUI to the original settings, which may be faster for the user.
+Synth button creates the sound. The reset button is for convenience, in order to quickly reset the GUI to the original settings, which may be faster for the user.
 
 #### Chord intervals
 

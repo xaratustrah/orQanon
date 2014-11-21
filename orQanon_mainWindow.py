@@ -83,8 +83,102 @@ class mainWindow(QMainWindow, Ui_mainWindow):
         self.pushButton_synth.pressed.connect(self.start_beep)
         self.comboBox.activated.connect(self.onActivated)
         #self.comboBox.activated[str].connect(self.onActivatedstr)
+        self.pushButton_str12.pressed.connect(self.on_str12)
+        self.pushButton_str22.pressed.connect(self.on_str22)
+        self.pushButton_str32.pressed.connect(self.on_str32)
+        self.pushButton_str42.pressed.connect(self.on_str42)
 
+        self.pushButton_str11.pressed.connect(self.on_str11)
+        self.pushButton_str21.pressed.connect(self.on_str21)
+        self.pushButton_str31.pressed.connect(self.on_str31)
+        self.pushButton_str41.pressed.connect(self.on_str41)
+
+        self.pushButton_str13.pressed.connect(self.on_str13)
+        self.pushButton_str23.pressed.connect(self.on_str23)
+        self.pushButton_str33.pressed.connect(self.on_str33)
+        self.pushButton_str43.pressed.connect(self.on_str43)
+
+    def on_str11(self):
+        self.tonic_combo = self.get_forth(self.tonic_combo)
+    def on_str21(self):
+        self.tonic_combo = self.get_forth(self.tonic_combo)
+        self.set_major()
+    def on_str31(self):
+        self.tonic_combo = self.get_forth(self.tonic_combo)
+        self.set_minor()
+    def on_str41(self):
+        self.tonic_combo = self.get_forth(self.tonic_combo)
+        self.set_seventh()
+
+    def on_str12(self):
+        self.set_octave()
+    def on_str22(self):
+        self.set_major()
+    def on_str32(self):
+        self.set_minor()
+    def on_str42(self):
+        self.set_seventh()
+
+    def on_str13(self):
+        self.tonic_combo = self.get_fifth(self.tonic_combo)
+        self.set_octave()
+    def on_str23(self):
+        self.tonic_combo = self.get_fifth(self.tonic_combo)
+        self.set_major()
+    def on_str33(self):
+        self.tonic_combo = self.get_fifth(self.tonic_combo)
+        self.set_minor()
+    def on_str43(self):
+        self.tonic_combo = self.get_fifth(self.tonic_combo)
+        self.set_seventh()
+
+    def get_forth(n):
+        a = n - 7
+        if a < 0:
+            return a + 12
+        else:
+            return a
+
+    def get_fifth(n):
+        a = n + 7
+        if a > 12:
+            return a - 12
+        else:
+            return a
+    
+    def set_octave(self):
+        for i in range(len(self.pushButtons)):
+            self.pushButtons[i].setChecked(False)
+        self.pushButtons[0].setChecked(True)
+        self.pushButtons[12].setChecked(True)
+        self.start_beep()
+
+    def set_minor(self):
+        for i in range(len(self.pushButtons)):
+            self.pushButtons[i].setChecked(False)
+        self.pushButtons[0].setChecked(True)
+        self.pushButtons[3].setChecked(True)
+        self.pushButtons[7].setChecked(True)
+        self.start_beep()
         
+    def set_major(self):
+        for i in range(len(self.pushButtons)):
+            self.pushButtons[i].setChecked(False)
+        self.pushButtons[0].setChecked(True)
+        self.pushButtons[4].setChecked(True)
+        self.pushButtons[7].setChecked(True)
+        self.start_beep()
+
+    def set_seventh(self):
+        for i in range(len(self.pushButtons)):
+            self.pushButtons[i].setChecked(False)
+        self.pushButtons[0].setChecked(True)
+        self.pushButtons[4].setChecked(True)
+        self.pushButtons[7].setChecked(True)
+        self.pushButtons[11].setChecked(True)
+        self.start_beep()
+
+
     def onActivated(self,number):
         self.tonic_combo = number
 
@@ -100,7 +194,7 @@ class mainWindow(QMainWindow, Ui_mainWindow):
             self.verticalSliders[i].setValue(0)
         self.verticalSlider_3.setValue(8)
 
-        self.doubleSpinBox_1.setValue(0.1)
+        self.doubleSpinBox_1.setValue(0.5)
         self.doubleSpinBox_2.setValue(440.0)
         self.spinBox.setValue(4)
         self.comboBox.setCurrentText('C')
