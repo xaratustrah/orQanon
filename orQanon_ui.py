@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './rsrc/orQanon.ui'
+# Form implementation generated from reading ui file 'orQanon.ui'
 #
-# Created: Sat Nov 22 00:25:59 2014
-#      by: PyQt5 UI code generator 5.3.2
+# Created: Sun Jan 18 17:31:39 2015
+#      by: PyQt5 UI code generator 5.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -499,7 +499,7 @@ class Ui_mainWindow(object):
         self.doubleSpinBox_1.setObjectName("doubleSpinBox_1")
         self.gridLayout_4.addWidget(self.doubleSpinBox_1, 1, 0, 1, 1)
         self.checkBox = QtWidgets.QCheckBox(self.groupBox_5)
-        self.checkBox.setChecked(True)
+        self.checkBox.setChecked(False)
         self.checkBox.setObjectName("checkBox")
         self.gridLayout_4.addWidget(self.checkBox, 2, 0, 1, 1)
         self.verticalLayout_5.addWidget(self.groupBox_5)
